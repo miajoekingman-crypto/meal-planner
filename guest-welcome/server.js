@@ -98,7 +98,7 @@ setInterval(() => broadcast('ping', Date.now()), 20000); // keeps proxies/Safari
 /* ---------------------------------------------------------------------- app */
 const app = express();
 app.disable('x-powered-by');
-app.set('trust proxy', false);
+app.set('trust proxy', process.env.TRUST_PROXY ? 1 : false); // set TRUST_PROXY=1 behind a host's proxy so PIN lockouts are per visitor
 app.use(express.json({ limit: '200kb' }));
 
 const publicContent = () => ({

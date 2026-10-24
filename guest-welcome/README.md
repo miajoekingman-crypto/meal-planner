@@ -90,3 +90,9 @@ seed.js              Starting content (TEST DATA)
 public/js/shared.js  Allergen vocabulary + customisation rules (used by server and browsers)
 public/guest|reception|orders|admin/   The four screens (vanilla JS, no build step)
 ```
+
+## Hosting online (for demos on any phone)
+
+The repo has a `render.yaml` blueprint. On https://render.com choose **New → Blueprint**, connect this repo and branch, and set `RECEPTION_PIN`, `ADMIN_PIN` and `ORDERS_PIN` when asked (use your own PINs, since the URL is public). You get an `https://…onrender.com` address that works on any phone or iPad.
+
+Notes: on the free plan the server sleeps after about 15 minutes idle (the first load takes about a minute) and its data resets on restart, so changes made in Admin are lost. Orders and guest names are held on the host, so use it for demos only. For real use, run it on a computer on the studio Wi-Fi.
